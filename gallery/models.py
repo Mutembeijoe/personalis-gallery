@@ -18,7 +18,7 @@ class Category(models.Model):
 
 
 class Image(models.Model):
-    image = models.ImageField(upload_to='profile_pics')
+    image = models.ImageField(upload_to='images_gallery')
     name = models.CharField(max_length=30)
     description = models.TextField()
     location = models.ForeignKey(Location, null=True, on_delete=models.SET_NULL)
