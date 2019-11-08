@@ -21,7 +21,7 @@ class Image(models.Model):
     image = models.ImageField(upload_to='images_gallery')
     name = models.CharField(max_length=30)
     description = models.TextField()
-    location = models.ForeignKey(Location, null=True, on_delete=models.SET_NULL)
+    location = models.ForeignKey(Location, blank=True, null=True, on_delete=models.SET_NULL)
     category = models.ForeignKey(Category, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
