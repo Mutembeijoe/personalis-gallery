@@ -38,11 +38,11 @@
                             Categories
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">All</a>
+                            <a class="dropdown-item" href="{% url 'gallery-home'%}">All</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Science</a>
-                            <a class="dropdown-item" href="#">Monuments</a>
-                            <a class="dropdown-item" href="#">Scholars</a>
+                            <a class="dropdown-item" href="{% url 'gallery-category' 'science'%}">Science</a>
+                            <a class="dropdown-item" href="{%url 'gallery-category' 'monuments'%}">Monuments</a>
+                            <a class="dropdown-item" href="{%url 'gallery-category' 'scholars'%}">Scholars</a>
                         </div>
                     </li>
                 </ul>

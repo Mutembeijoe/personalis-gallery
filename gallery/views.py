@@ -6,8 +6,15 @@ from .models import Image
 
 
 def home(request):
+    print(request)
     context = {
         'title':'Home',
-        'all_images': Image.get_all()
+        'images': Image.get_all()
     }
     return render(request, 'gallery/index.html', context )
+
+def filter_by_category(request,category):
+    context = {
+        'images':Image.filter_by_category(category)
+    }
+    return render(request, 'gallery/index.html', context)

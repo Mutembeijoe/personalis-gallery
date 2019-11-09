@@ -30,3 +30,7 @@ class Image(models.Model):
     @classmethod
     def get_all(cls):
         return cls.objects.all()
+
+    @classmethod
+    def filter_by_category(cls, category):
+        return cls.objects.filter(category__title=category).all()
