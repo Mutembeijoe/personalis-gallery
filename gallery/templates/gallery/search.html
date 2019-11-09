@@ -1,0 +1,24 @@
+{% extends 'gallery/base.html'%}
+{%block content%}
+{%if images%}
+<div class="container">
+    <div class="row">
+        <h2>Found {{ images|length }} matching search term {{message}}</h2>
+    </div>
+</div>
+<div id="photos" class="m-3">
+    {% for image in images%}
+    <img class="my-1" src="{{image.image.url}}" alt="{{image.name}}">
+    {%empty%}
+    <h3>Sorry No Images Found based on that query</h3>
+    {% endfor%}
+</div>
+{%else%}
+<div class="container">
+    <div class="row">
+        <h2> Found 0 articles for the search term</h2>
+    </div>
+</div>
+
+{%endif%}
+{%endblock%}

@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name="gallery-home"),
-    path('categories/<category>/', views.filter_by_category, name="gallery-category")
+    path('categories/<category>/', views.filter_by_category, name="gallery-category"),
+    path('search', views.search_results, name="search_results")
 ]

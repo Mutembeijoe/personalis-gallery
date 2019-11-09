@@ -3,7 +3,29 @@
 {%if images%}
 <div id="photos" class="m-3">
     {% for image in images%}
-    <img class="my-1" src="{{image.image.url}}" alt="{{image.name}}">
+    <img class="my-1" src="{{image.image.url}}" alt="{{image.name}}" data-toggle="modal"
+        data-target="#exampleModalCenter{{image.pk}}">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter{{image.pk}}" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">{{image.name}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img class="my-1" src="{{image.image.url}}" alt="{{image.name}}">
+                </div>
+                <div class="modal-footer" style="flex-direction: column">
+                    <span style="line-height:18px;"> {{image.location.name}}</span>
+                    <p class="my-3" style="line-height:18px;">{{image.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
     {%empty%}
     <h3>Sorry No Images Found based on that query</h3>
     {% endfor%}
