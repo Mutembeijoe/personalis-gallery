@@ -1,6 +1,9 @@
 {% extends 'gallery/base.html'%}
 {%block content%}
-<div class="container">
-    Hello World
+<div id="photos" class="m-3">
+    {% for image in all_images%}
+    <img class="my-1" src="{{image.image.url}}" alt="{{image.name}}">
+    {% endfor%}
 </div>
+
 {%endblock%}
