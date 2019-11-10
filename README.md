@@ -17,7 +17,7 @@ Personalis Galleria is a personal gallery web app written in django in which the
 * You can view the live version of the app in [Live page](https://personal-flask-blog.herokuapp.com "Personalis Galleria")
 
 ## Screenshots
-![image](/screenshoot/Screenshot.png)
+![image](https://github.com/Mutembeijoe/personalis-gallery/blob/master/screenshot/Screenshot.png)
 
 
 ## Technologies Used
