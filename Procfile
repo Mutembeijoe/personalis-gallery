@@ -1,0 +1,1 @@
+web: gunicorn personalis_gallery.wsgi --log-file -
