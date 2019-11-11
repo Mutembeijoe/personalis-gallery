@@ -12,6 +12,12 @@ class LocationTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.location,Location))
 
+    def test_delete_location(self):
+        self.location2 = Location(name="Nairobi")
+        Location.objects.filter(name="Nairobi").delete()
+        location_2 = Location.objects.filter(name="Nairobi")
+        self.assertEqual(len(location_2),0) 
+
 class CategoryTestClass(TestCase):
     def setUp(self):
         self.category = Category(title="fashion")
@@ -21,4 +27,10 @@ class CategoryTestClass(TestCase):
 
     def test_instance(self):
         self.assertTrue(isinstance(self.category,Category))
+
+    def test_delete_category(self):
+        self.category2 = Category(title="genetics")
+        Category.objects.filter(title="genetics").delete()
+        category2 = Category.objects.filter(title="genetics")
+        self.assertEqual(len(category2),0) 
 
