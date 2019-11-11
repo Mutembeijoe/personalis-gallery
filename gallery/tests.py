@@ -18,6 +18,13 @@ class LocationTestClass(TestCase):
         location_2 = Location.objects.filter(name="Nairobi")
         self.assertEqual(len(location_2),0) 
 
+    def test_update_location(self): 
+        self.location.name = "Nakuru"
+        self.location.save()
+        location = Location.objects.filter(name="Nakuru").first()
+        self.assertEqual(location.name,"Nakuru") 
+
+
 class CategoryTestClass(TestCase):
     def setUp(self):
         self.category = Category(title="fashion")
